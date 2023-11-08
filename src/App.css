@@ -22,7 +22,6 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 
-  display: flex;
   flex-direction: column;
 
   width: 40%;
@@ -36,7 +35,6 @@
 }
 
 .app_image {
-  margin: 24px;
   width: 20vw;
   height: 30vh;
 
@@ -46,6 +44,11 @@
   border-radius: 10px;
   box-shadow: 0 8px 32px 0 rgba(7, 57, 80, 0.75);
 }
+
+.app_data{
+  align-self: center;
+}
+
 .location_searcher {
   padding: 8px;
   color: white;
@@ -67,12 +70,19 @@
   margin: 5px;
   font-family: 'Archivo Narrow';
   color: #2e2e2e;
+  white-space: nowrap;
 }
   .temp img{
     width: 30px;
     height: 30px;
+
+    align-self: center;
+
+    margin-right: .5vw;
   }
 
 .info{
-  display: flex;
+  justify-content: space-between;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
