@@ -66,10 +66,28 @@ function App() {
             Search Location
           </button>
         </div>
-        <div className="app__data">
-          <p className="temp">Current Temparature: {weather?.main?.temp}º F</p>
+        <div className="info">
+          <div>
+            <h1>Current Conditon: {weather?.description}</h1>
+            <div className="app_image" style={{backgroundImage: `url(${photos})`}}></div>
+          </div>
+          <div className="app__data">
+            <div className="flex temp">
+              <img src={require("./images/temp.png")} alt=""></img>
+              <p>Temparature: {weather?.main?.temp}º F</p>
+            </div>
+            <div className="flex temp">
+              <img src={require("./images/temp.png")} alt=""></img>
+              <p>Feels Like: {weather?.main?.feels_like} º F</p>
+            </div>
+            <div className="flex temp">
+              <img src={require("./images/pressure.png")} alt=""></img>
+              <p>Pressure: {Math.round(((weather?.main?.pressure)*0.02952998057228486)*100)/100} in</p>
+            </div>
+            
+          </div>
         </div>
-        <img className="app__image" src={photos} alt="" />
+        
       </div>
     </div>
   );
