@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [weather, setWeather] = useState({});
-  const [locations, setLocations] = useState("london");
+  const [weatherArr, setWeatherArr] = useState({});
+  const [locations, setLocations] = useState("Salt Lake City");
   const [photos, setPhotos] = useState([]);
 
   const WEATHER_ID = '337b784e8b0065d7f1d9fdb82c881039';
@@ -31,8 +31,8 @@ function App() {
         }
       })
       .then((object) => {
-        setWeather(object);
-        console.log(weather);
+        setWeatherArr(object);
+        console.log(weatherArr);
       })
       .catch((error) => console.log(error));
     fetch(
@@ -51,13 +51,15 @@ function App() {
       })
       .catch((error) => console.log(error));
   }
+  console.log(weatherArr);
+
   return (
     <div className="app">
       <div className="wrapper flex">
         <div className="search">
           <input
             type="text"
-            value={locations}
+            //value={locations}
             onChange={(e) => setLocations(e.target.value)}
             placeholder="Enter location"
             className="location_input"
@@ -67,34 +69,34 @@ function App() {
           </button>
         </div>
         <div className="flex info">
-          <div>
-            <h1>Current Conditon: {weather?.description}</h1>
+          <div className="leftSide">
+            <h1>{weatherArr?.name}, {weatherArr?.sys?.country}</h1>
             <div className="app_image" style={{backgroundImage: `url(${photos})`}}></div>
           </div>
-          <div className="app_data">
+          <div className="rightSide">
             <div className="flex temp">
               <img src={require("./images/temp.png")} alt=""></img>
-              <p>Temparature: {Math.round(weather?.main?.temp)}º F</p>
+              <p>Temparature: {Math.round(weatherArr?.main?.temp)}º F</p>
             </div>
             <div className="flex temp">
               <img src={require("./images/temp2.png")} alt=""></img>
-              <p>Feels Like: {Math.round(weather?.main?.feels_like)}º F</p>
+              <p>Feels Like: {Math.round(weatherArr?.main?.feels_like)}º F</p>
             </div>
             <div className="flex temp">
               <img src={require("./images/pressure.png")} alt=""></img>
-              <p>Pressure: {Math.round(((weather?.main?.pressure)*0.02952998057228486)*100)/100} in</p>
+              <p>Pressure: {Math.round(((weatherArr?.main?.pressure)*0.02952998057228486)*100)/100} in</p>
             </div>
             <div className="flex temp">
               <img src={require("./images/humidity.png")} alt=""></img>
-              <p>Humidity: {Math.round(weather?.main?.humidity)}%</p>
+              <p>Humidity: {Math.round(weatherArr?.main?.humidity)}%</p>
             </div>
             <div className="flex temp">
               <img src={require("./images/visibility.png")} alt=""></img>
-              <p>Visibility: {Math.round((weather?.visibility)/1609)} mi</p>
+              <p>Visibility: {Math.round((weatherArr?.visibility)/1609)} mi</p>
             </div>
             <div className="flex temp">
               <img src={require("./images/wind.png")} alt=""></img>
-              <p>Wind: {Math.round(weather?.wind?.speed)} mph</p>
+              <p>Wind: {Math.round(weatherArr?.wind?.speed)} mph</p>
             </div>
           </div>
         </div>

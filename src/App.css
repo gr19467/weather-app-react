@@ -10,10 +10,17 @@
 
   height: 100vh;
   width: 100vw;
+
+  color: rgb(7, 57, 80);
+  font-family: 'Archivo Narrow';
 }
 
 .flex{
   display: flex;
+}
+
+h1{
+  font-size: 5vh;
 }
 
 .wrapper {
@@ -24,8 +31,8 @@
 
   flex-direction: column;
 
-  width: 40%;
-  height: auto;
+  width: 70vw;
+  height: 70vh;
 
   background: rgba(219, 216, 216, 0.092);
   box-shadow: 0 8px 32px 0 rgba(7, 57, 80, 0.75);
@@ -35,8 +42,8 @@
 }
 
 .app_image {
-  width: 20vw;
-  height: 30vh;
+  width: 30vw;
+  height: 40vh;
 
   background-size: cover;
   background-position: center;
@@ -45,19 +52,37 @@
   box-shadow: 0 8px 32px 0 rgba(7, 57, 80, 0.75);
 }
 
-.app_data{
+.leftSide{
+  margin-right: 3vw;
+}
+
+.rightSide{
   align-self: center;
 }
 
+input{
+  width: 15vw;
+  height: 3vh;
+  
+  font-size: 2vh;
+
+  margin-left: 2vw;
+}
+
 .location_searcher {
-  padding: 8px;
+  width: 10vw;
+  height: 5vh;
+
+  font-size: 2vh;
+
+  padding: .5vh;
   color: white;
   background-color: rgb(7, 57, 80);
 
   border: none;
   border-radius: 5px;
 
-  margin-left: 5px;
+  margin-left: 1vw;
 }
 .location_input {
   padding: 8px;
@@ -68,13 +93,13 @@
 
 .temp {
   margin: 5px;
-  font-family: 'Archivo Narrow';
-  color: #2e2e2e;
   white-space: nowrap;
+
+  font-size: 2.3vh;
 }
   .temp img{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 
     align-self: center;
 
@@ -82,7 +107,6 @@
   }
 
 .info{
-  justify-content: space-between;
+  justify-content: left;
   padding-left: 2vw;
-  padding-right: 2vw;
 }
