@@ -6,6 +6,7 @@ function App() {
   const [weatherArr, setWeatherArr] = useState({});
   const [locations, setLocations] = useState("Salt Lake City");
   const [photos, setPhotos] = useState([]);
+  const [saved, setSaved] = useState(0);
 
   const WEATHER_ID = '337b784e8b0065d7f1d9fdb82c881039';
   const UNSPLASH_ID = 'rGCzHkKeaFR7JbUtp-F0xY3sCLD1M3AvNkF1jn5TTfY';
@@ -50,8 +51,15 @@ function App() {
         setPhotos(data?.results[0]?.urls?.raw);
       })
       .catch((error) => console.log(error));
+
+    for (let i = 0; i < saved.length; i++) {
+      const location = saved[i];
+      
+    }
   }
   console.log(weatherArr);
+  console.log("current location is " + locations);
+  console.log("saved: " + saved);
 
   return (
     <div className="app">
@@ -73,7 +81,7 @@ function App() {
             <h1>{weatherArr?.name}, {weatherArr?.sys?.country}</h1>
             <div className="app_image" style={{backgroundImage: `url(${photos})`}}></div>
           </div>
-          <div className="rightSide">
+          <div className="middle">
             <div className="flex temp">
               <img src={require("./images/temp.png")} alt=""></img>
               <p>Temparature: {Math.round(weatherArr?.main?.temp)}º F</p>
@@ -98,6 +106,12 @@ function App() {
               <img src={require("./images/wind.png")} alt=""></img>
               <p>Wind: {Math.round(weatherArr?.wind?.speed)} mph</p>
             </div>
+            <button className="save" value={saved} onClick={(e) => setSaved(parseInt(e.target.value + 1))}>Save Location</button>
+          </div>
+          <div className="rightSide" id="rightSide">
+            {Array.from(Array(Number(saved)).keys()).map((location, index) => (
+              <div className="flex savedLocation" key={index}>{location}</div>
+            ))}
           </div>
         </div>
         
