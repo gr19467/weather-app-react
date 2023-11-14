@@ -23,6 +23,14 @@ h1{
   font-size: 5vh;
 }
 
+.nav{
+  width: 70vw;
+
+  justify-content: space-between;
+
+
+}
+
 .wrapper {
   padding: 25px;
 
@@ -56,35 +64,9 @@ h1{
   margin-right: 3vw;
 }
 
-.middle{
+.rightSide{
   align-self: center;
 }
-
-.rightSide{
-  width: 10vw;
-
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px 0 gray;
-
-  border: 1px solid rgb(7, 57, 80);
-  border-radius: 5px;
-
-  margin-left: 7vw;
-}
-  .savedLocation{
-    height: 4vh;
-
-    background-color: rgb(7, 57, 80, .35);
-
-    font-size: 2vh;
-    color: white;
-
-    align-items: center;
-    justify-content: center;
-  }
-  .savedLocation:hover{
-    background-color: rgb(7, 57, 80, .75);
-  }
 
 input{
   width: 15vw;
@@ -109,6 +91,8 @@ input{
   border-radius: 5px;
 
   margin-left: 1vw;
+
+  align-self: center;
 }
 .location_input {
   padding: 8px;
