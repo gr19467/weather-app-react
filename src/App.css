@@ -28,8 +28,21 @@ h1{
 
   justify-content: space-between;
 
+  font-size: 3vh;
 
+  margin-bottom: 1vh;
 }
+
+  .pages{
+    width: 40vw;
+    justify-content: space-evenly;
+  }
+
+  h2:hover{
+    padding: 5px;
+    box-shadow: 0px 20px 30px 5px rgba(141, 139, 139, 0.75);
+    border-radius: 50px;
+  }
 
 .wrapper {
   padding: 25px;
@@ -60,12 +73,11 @@ h1{
   box-shadow: 0 8px 32px 0 rgba(7, 57, 80, 0.75);
 }
 
-.leftSide{
-  margin-right: 3vw;
-}
-
 .rightSide{
+  width: 40vw;
+
   align-self: center;
+  justify-content: space-evenly;
 }
 
 input{
@@ -99,10 +111,20 @@ input{
   border: 1px solid rgba(255, 255, 255, 0.6);
   color: #333;
   border-radius: 5px;
+  margin-left: 0;
 }
 
 .search{
   margin-top: 2vh;
+  align-items: center;
+
+  border: 2px solid rgb(7, 57, 80, .5);
+  border-radius: 40px;
+
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .temp {
