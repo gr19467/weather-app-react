@@ -69,13 +69,13 @@ const Home = () => {
         </div>
       </div>
       <div className="wrapper flex">
+        <h1>{weatherArr?.name}, {weatherArr?.sys?.country}</h1>
         <div className="flex info">
           <div className="leftSide">
-            <h1>{weatherArr?.name}, {weatherArr?.sys?.country}</h1>
             <div className="app_image" style={{backgroundImage: `url(${photos})`}}></div>
           </div>
           <div className="flex rightSide">
-            <div>
+            <div className="rightColumn">
                 <div className="flex temp">
                 <img src={require("../images/temp.png")} alt=""></img>
                 <p>Temparature: {Math.round(weatherArr?.main?.temp)}º F</p>
@@ -92,16 +92,8 @@ const Home = () => {
                 <img src={require("../images/humidity.png")} alt=""></img>
                 <p>Humidity: {Math.round(weatherArr?.main?.humidity)}%</p>
               </div>
-              <div className="flex temp">
-                <img src={require("../images/visibility.png")} alt=""></img>
-                <p>Visibility: {Math.round((weatherArr?.visibility)/1609)} mi</p>
-              </div>
-              <div className="flex temp">
-                <img src={require("../images/wind.png")} alt=""></img>
-                <p>Wind: {Math.round(weatherArr?.wind?.speed)} mph</p>
-              </div>
             </div>
-            <div>
+            <div className="rightColumn">
               <div className="flex temp">
                 <img src={require("../images/low.png")} alt=""></img>
                 <p>Low: {Math.round(weatherArr?.main?.temp_min)}º F</p>
@@ -109,6 +101,14 @@ const Home = () => {
               <div className="flex temp">
                 <img src={require("../images/high.png")} alt=""></img>
                 <p className="temp">High: {Math.round(weatherArr?.main?.temp_max)}º F</p>
+              </div>
+              <div className="flex temp">
+                <img src={require("../images/visibility.png")} alt=""></img>
+                <p>Visibility: {Math.round((weatherArr?.visibility)/1609)} mi</p>
+              </div>
+              <div className="flex temp">
+                <img src={require("../images/wind.png")} alt=""></img>
+                <p>Wind: {Math.round(weatherArr?.wind?.speed)} mph</p>
               </div>
             </div>
           </div>
