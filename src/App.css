@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Libre+Baskerville&family=Mukta:wght@400;700&family=Quicksand:wght@300;500&family=Teko:wght@300;400;500;600;700&display=swap");
+
+#root, html{
+  margin: 0 auto;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -23,25 +28,30 @@ h1{
   font-size: 5vh;
 }
 
-.nav{
-  width: 70vw;
+nav{
+  background-color: rgb(7, 57, 80);
 
-  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 1vh;
 
-  font-size: 3vh;
+  box-shadow: 0px 5px 30px 30px rgb(7, 57, 80);
 
-  margin-bottom: 1vh;
+  position: relative;
 }
 
-  .pages{
-    width: 40vw;
-    justify-content: space-evenly;
+  ul{
+    margin: 0 auto;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
 
-  h2:hover{
-    padding: 5px;
-    box-shadow: 0px 20px 30px 5px rgba(141, 139, 139, 0.75);
-    border-radius: 50px;
+  a{
+    color: white;
+    text-decoration: none;
+    font-size: 5vh;
   }
 
 .wrapper {
@@ -114,8 +124,12 @@ input{
   margin-left: 0;
 }
 
+.nav{
+  width: 70vw;
+}
+
 .search{
-  margin-top: 2vh;
+  margin-bottom: 2vh;
   align-items: center;
 
   border: 2px solid rgb(7, 57, 80, .5);
@@ -123,8 +137,8 @@ input{
 
   padding-left: 1vw;
   padding-right: 1vw;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 }
 
 .temp {
